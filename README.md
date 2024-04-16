@@ -112,10 +112,10 @@ echo "Hello World";
 ?>
 ```
 
+![](images/025.png)
+
 `Chrome`で下記URLにアクセスする  
 http://localhost/php/index.php
-
-![](images/025.png)
 
 このような画面になればOK  
 ![](images/026.png)

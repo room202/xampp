@@ -170,9 +170,12 @@ Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
 ```
 
 ### Windowsファイアウォールの下記ポート番号を開放
+
 Apahce : 80
 
 MySQL : 3306
+
+※すでにApache(80)、MySQL(3306)が登録されていたら一旦削除する
 
 `セキュリティが強化された Windows Defender ファイアウォール`アプリから設定可能
 

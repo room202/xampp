@@ -129,44 +129,6 @@ XAMPPコントロールパネルの`Apache`と`MySQL`と書かれている横の
 その後、右下の`Quit`ボタンでXAMPPを終了させる  
 ![](images/028.png)
 
-## `http://localhost`で表示するフォルダを変更する方法
-
-デフォルト設定では、`http://localhost`にアクセスしたら`C:\xampp\htdocs`の内容が表示される
-
-これを指定のフォルダ(`C:\work\php`)の内容を表示させる方法
-
-変更対象ファイル : `C:\xampp\apache\conf\httpd.conf`  
-252行目付近
-
-```httpd.conf
-DocumentRoot "C:/xampp/htdocs"
-<Directory "C:/xampp/htdocs">
-```
-
-↓ に変更
-
-```httpd.conf
-DocumentRoot "C:/work/php"
-<Directory "C:/work/php">
-```
-
-## `http://localhost/php`で表示するフォルダを変更する方法
-
-`http://localhost/php`にアクセスしたら、指定のフォルダ(`C:\work\php`)の内容を表示させる方法
-
-変更対象ファイル : `C:\xampp\apache\conf\httpd.conf`  
-373行目付近に下記設定を追加
-
-```httpd.conf
-Alias /php "C:\work\php\"
-<Directory "C:\work\php\">
-  Options Indexes FollowSymLinks MultiViews
-  AllowOverride all
-  Require all granted
-  Allow from all
-</Directory>
-```
-
 ## MySQL(MariaDB)を別パソコンから接続できるようにする
 
 ### MySQL(MariaDB)ユーザーアカウントの設定変更
@@ -206,4 +168,42 @@ MySQL : 3306
 参考URL
 
 https://www.fmworld.net/cs/azbyclub/qanavi/jsp/qacontents.jsp?PID=0111-2966
+
+## `http://localhost`で表示するフォルダを変更する方法
+
+デフォルト設定では、`http://localhost`にアクセスしたら`C:\xampp\htdocs`の内容が表示される
+
+これを指定のフォルダ(`C:\work\php`)の内容を表示させる方法
+
+変更対象ファイル : `C:\xampp\apache\conf\httpd.conf`  
+252行目付近
+
+```httpd.conf
+DocumentRoot "C:/xampp/htdocs"
+<Directory "C:/xampp/htdocs">
+```
+
+↓ に変更
+
+```httpd.conf
+DocumentRoot "C:/work/php"
+<Directory "C:/work/php">
+```
+
+## `http://localhost/php`で表示するフォルダを変更する方法
+
+`http://localhost/php`にアクセスしたら、指定のフォルダ(`C:\work\php`)の内容を表示させる方法
+
+変更対象ファイル : `C:\xampp\apache\conf\httpd.conf`  
+373行目付近に下記設定を追加
+
+```httpd.conf
+Alias /php "C:\work\php\"
+<Directory "C:\work\php\">
+  Options Indexes FollowSymLinks MultiViews
+  AllowOverride all
+  Require all granted
+  Allow from all
+</Directory>
+```
 

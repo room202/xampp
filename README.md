@@ -132,11 +132,12 @@ XAMPPコントロールパネルの`Apache`と`MySQL`と書かれている横の
 ## MySQL(MariaDB)を別パソコンから接続できるようにする
 
 ### MySQL(MariaDB)ユーザーアカウントの設定変更
-‘staff’@’localhost’
+
+`‘staff’@’localhost’`
 
 ↓
 
-‘staff’@’%’
+`‘staff’@’%’`
 
 ### httpd-xampp.confの設定変更
 

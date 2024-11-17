@@ -141,6 +141,14 @@ XAMPPコントロールパネルの`Apache`と`MySQL`と書かれている横の
 
 ### httpd-xampp.confの設定変更
 
+別PCからphpMyAdmiにアクセスできるように設定する
+
+`Require local`
+
+↓
+
+`Require all granted`
+
 ```
 Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
 <Directory "C:/xampp/phpMyAdmin">
@@ -156,7 +164,6 @@ Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
 Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
 <Directory "C:/xampp/phpMyAdmin">
     AllowOverride AuthConfig
-    #Require local
     Require all granted
     ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
 </Directory>
@@ -164,6 +171,7 @@ Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
 
 ### Windowsファイアウォールの下記ポート番号を開放
 Apahce : 80
+
 MySQL : 3306
 
 `セキュリティが強化された Windows Defender ファイアウォール`アプリから設定可能

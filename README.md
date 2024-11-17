@@ -166,3 +166,44 @@ Alias /php "C:\work\php\"
   Allow from all
 </Directory>
 ```
+
+## MySQL(MariaDB)を別パソコンから接続できるようにする
+
+### MySQL(MariaDB)ユーザーアカウントの設定変更
+‘staff’@’localhost’
+↓
+‘staff’@’%’
+
+### httpd-xampp.confの設定変更
+
+```
+Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
+<Directory "C:/xampp/phpMyAdmin">
+    AllowOverride AuthConfig
+    Require local
+    ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+</Directory>
+```
+
+↓
+
+```
+Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
+<Directory "C:/xampp/phpMyAdmin">
+    AllowOverride AuthConfig
+    #Require local
+    Require all granted
+    ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+</Directory>
+```
+
+### Windowsファイアウォールの下記ポート番号を開放
+Apahce : 80
+MySQL : 3306
+
+`セキュリティが強化された Windows Defender ファイアウォール`アプリから設定可能
+
+参考URL
+
+https://www.fmworld.net/cs/azbyclub/qanavi/jsp/qacontents.jsp?PID=0111-2966
+

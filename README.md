@@ -133,7 +133,9 @@ XAMPPコントロールパネルの`Apache`と`MySQL`と書かれている横の
 
 ### MySQL(MariaDB)ユーザーアカウントの設定変更
 ‘staff’@’localhost’
+
 ↓
+
 ‘staff’@’%’
 
 ### httpd-xampp.confの設定変更

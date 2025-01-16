@@ -220,4 +220,23 @@ Alias /php "C:\work\php\"
   Allow from all
 </Directory>
 ```
+## MySQLで実行されたSQLのログを出力
 
+対象ファイル : `C:\xampp\mysql\bin\my.ini`
+
+変更内容
+
+`[mysqld]`の設定欄に下記項目を追加
+
+```bash
+general_log=1
+general_log_file="C:/xampp/htdocs/general-query.log"
+```
+
+### 変更前
+
+![](images/100.png)
+
+### 変更後
+
+![](images/101.png)
